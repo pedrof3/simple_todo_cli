@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "task": "lorem...",
+        "status": "done"
+    },
+    {
+        "id": 2,
+        "task": "ipsulum",
+        "status": "in progress"
+    },
+    {
+        "id": 3,
+        "task": "dolor",
+        "status": "in progress"
+    },
+    {
+        "id": 4,
+        "task": "nata\u00e7\u00e3o",
+        "status": "not done"
+    },
+    {
+        "id": 5,
+        "task": "corrida",
+        "status": "not done"
+    },
+    {
+        "id": 6,
+        "task": "beber água",
+        "status": "not done"
+    }
+]
