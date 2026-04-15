@@ -49,10 +49,9 @@ def update_task(task_id, task_status="in progress"):
 
 # A função delete_task deve além de deletar a tarefa com id informado, rearranjar os ids
 def delete_task(task_id):
-    if get_tasks() != [] and task_id in range(1, get_id()):
+    if get_tasks() != [] and task_id in range(1, get_id()+1):
         all_tasks = get_tasks()
 
-        # Já está deletando o id corretamente, falta rearranjar os outros ids
         pre_tasks = []
         post_tasks = []
         
@@ -72,3 +71,46 @@ def delete_task(task_id):
         with open("db.json", "w", encoding="utf-8") as f:
             json.dump(all_tasks, f, indent=4)
             
+while True:
+    user_input = input("")
+    commands = user_input.split(" ", 1)
+    
+    try:
+        if commands[1].strip() == "":
+            commands.pop()
+            
+    except IndexError:
+        pass
+    
+    match (commands[0]):
+        
+        case "add":
+            try:
+                set_new_task(commands[1])
+            
+            except IndexError:
+                print("Informe a tarefa a ser inserida.")
+        
+        case "update":
+            pass
+        
+        case "delete":
+            try:
+                id = int(commands[1])
+                delete_task(id)
+            
+            except ValueError:
+                print("Tarefa não encontrada.")
+                
+            except IndexError:
+                print("Informe o ID da tarefa a ser deletada.")
+        
+        case "list":
+            for i in get_tasks():
+                print(f"{i["id"]} - {i["task"]}: {i["status"]}")
+        
+        case "exit":
+            break
+        
+        case _:
+            print(f"Comando '{commands[0]}' não encontrado.")
