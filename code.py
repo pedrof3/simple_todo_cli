@@ -34,13 +34,22 @@ def set_new_task(task):
     with open("db.json", "w", encoding="utf-8") as f:
         json.dump(all_tasks, f, indent=4)
 
-def update_task(task_id, task_status="in progress"):
+def update_task(task_id):
     all_tasks = get_tasks()
 
     for i in all_tasks:
         if i["id"] == task_id:
-            i["status"] = task_status
-            break
+            if i["status"] == "not done":
+                i["status"] = "in progress"
+                break
+
+            elif i["status"] == "in progress":
+                i["status"] = "done"
+                break
+
+            else:
+                pass
+                break
 
     all_tasks[task_id-1] = i
 
@@ -92,7 +101,15 @@ while True:
                 print("Informe a tarefa a ser inserida.")
         
         case "update":
-            pass
+            try:
+                id = int(commands[1])
+                update_task(id)
+
+            except ValueError:
+                print("Informe o ID da tarefa a ser modificada.")
+
+            except IndexError:
+                print("ID informado não existe")
         
         case "delete":
             try:

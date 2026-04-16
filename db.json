@@ -1,42 +1,37 @@
 [
     {
         "id": 1,
-        "task": "corrida",
-        "status": "not done"
-    },
-    {
-        "id": 2,
         "task": "beber \u00e1gua",
         "status": "not done"
     },
     {
-        "id": 3,
+        "id": 2,
         "task": "qlqr",
         "status": "not done"
     },
     {
-        "id": 4,
-        "task": "isso",
-        "status": "not done"
-    },
-    {
-        "id": 5,
-        "task": "nova coisa",
-        "status": "not done"
-    },
-    {
-        "id": 6,
+        "id": 3,
         "task": "novidade nova",
         "status": "not done"
     },
     {
-        "id": 7,
+        "id": 4,
         "task": "organizar contas",
         "status": "not done"
     },
     {
-        "id": 8,
-        "task": "pagar spotify",
-        "status": "not done"
+        "id": 5,
+        "task": "new run",
+        "status": "done"
+    },
+    {
+        "id": 6,
+        "task": "novo rumo",
+        "status": "done"
+    },
+    {
+        "id": 7,
+        "task": "sensa\u00e7\u00e3o",
+        "status": "done"
     }
 ]
